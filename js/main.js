@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $('.dn').click(function () {
-    $('html, body, .mainT').toggleClass('night');
+    $('html, body, header,.mainT').toggleClass('night');
     $('.btn').toggleClass('btnN');
     if ($('body').attr('class') == 'night') {
       $('.dn').attr('src', "/img/day.png");
