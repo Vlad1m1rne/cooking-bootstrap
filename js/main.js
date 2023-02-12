@@ -51,17 +51,24 @@ $(document).ready(function () {
   });
 
   $('#btn1').click(function () {
-    $('#btn1').hide();
+    $(this).hide();
     $('.add_form').show();
 
   });
 
   $('#btn2').click(function () {
-    console.log('btn2');
     $('#btn1').show();
     $('.add_form').hide();
   });
 
+  $('#btn3').click(function(){
+$(this).hide();
+$('.delF').show();
+  });
+$('#btn5').click(function(){
+  $('.delF').hide();
+  $('#btn3').show();
+});
 
 });
 

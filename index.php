@@ -63,7 +63,22 @@
                                           ?>>
     </div>
     <div class="container text-center">
-      <button id="btn1" type="button" class="btn btn-danger">Добавить рецепт</button>
+      <button id="btn1" type="button" class="btn btn-success">Добавить рецепт</button>
+      <button id='btn3' type='button' class="btn btn-danger">Удалить рецепт</button>
+    </div>
+
+    <div class="container text-center">
+      <div class="delF" style="display: none">
+        <h4>Удалить рецепт</h4>
+        <form action="del.php" method="POST">
+          <div class="mb-3">
+            <label for="del1" class="form-label">Введите Id рецепта</label>
+            <input id="del1" type="number" class="form-control" name="recipeId">
+          </div>
+          <input class="btn btn-danger" type="submit" value="Удалить">
+          <input class="btn btn-secondary" type="reset" id="btn5" value="Отмена">
+        </form>
+      </div>
     </div>
 
     <div class="container text-center">
@@ -121,18 +136,20 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container text-center tabl">
       <table class="mainT">
-        <tr>
-          <th>Id</th>
-          <th>Категория</th>
-          <th>Название</th>
-          <th>Ингредиенты</th>
-          <th>Рецепт</th>
-          <th>Ссылка</th>
-          <th>Дата добавления</th>
-          <th>Изменить</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Категория</th>
+            <th>Название</th>
+            <th>Ингредиенты</th>
+            <th>Рецепт</th>
+            <th>Ссылка</th>
+            <th>Дата добавления</th>
+            <th>Изменить</th>
+          </tr>
+        </thead>
 
         <?php
         if (isset($_POST['show'])) {
@@ -157,6 +174,7 @@
 
           require "connect.php";
           $result =  $con->query($sql);
+
           while ($row = $result->fetch()) {
             echo "<tr> ";
             echo "<td> " . $row['recipeId'] . "</td>";
@@ -164,7 +182,7 @@
             echo "<td>" . $row['nameRecipe'] . "</td>";
             echo "<td>" . $row['ingredient'] . "</td>";
             echo "<td>" . $row['recipeDescription'] . "</td>";
-            if ($row['link']) echo "<td><a href=" . $row['link'] . ">Ссылка</a></td>";
+            if ($row['link']) echo "<td><a target='_blank' href=" . $row['link'] . ">Ссылка</a></td>";
             else echo "<td>" . $row['link'] . "</td>";
             echo "<td>" . $row['dat'] . "</td>";
             echo "<td><button class='upd btn btn-primary' value='" .  $row["recipeId"] . "'>Изменить</button></td>";
@@ -172,6 +190,7 @@
           }
         }
         ?>
+
       </table>
 
     </div>
