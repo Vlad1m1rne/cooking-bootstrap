@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <title>Cooking</title>
+  <title>Кулинарная книга</title>
 </head>
 
 <body>
@@ -63,8 +63,8 @@
                                           ?>>
     </div>
     <div class="container text-center">
-      <button id="btn1" type="button" class="btn btn-success">Добавить рецепт</button>
-      <button id='btn3' type='button' class="btn btn-danger">Удалить рецепт</button>
+      <button id="btn1" type="button" class="btn btn-success btnM">Добавить рецепт</button>
+      <button id='btn3' type='button' class="btn btn-danger btnM">Удалить рецепт</button>
     </div>
 
     <div class="container text-center">
@@ -75,8 +75,8 @@
             <label for="del1" class="form-label">Введите Id рецепта</label>
             <input id="del1" type="number" class="form-control" name="recipeId">
           </div>
-          <input class="btn btn-danger" type="submit" value="Удалить">
-          <input class="btn btn-secondary" type="reset" id="btn5" value="Отмена">
+          <input class="btn btn-danger btnM" type="submit" value="Удалить">
+          <input class="btn btn-secondary btnM" type="reset" id="btn5" value="Отмена">
         </form>
       </div>
     </div>
@@ -100,8 +100,8 @@
             <label for="ur" class="form-label">Ссылка на рецепт</label>
             <input id="ur" type="url" class="form-control" name="link">
           </div>
-          <input class="btn btn-success" type="submit" value="Отредактировать">
-          <input class="btn btn-secondary" type="reset" id="btn4" value="Отмена редактирования">
+          <input class="btn btn-success btnM" type="submit" value="Отредактировать">
+          <input class="btn btn-secondary btnM" type="reset" id="btn4" value="Отмена редактирования">
         </form>
 
       </div>
@@ -129,8 +129,8 @@
             <label for="inp2" class="form-label">Ссылка на рецепт</label>
             <input id="inp2" class="form-control" type="url" size="48" name="link">
           </div>
-          <input class="btn btn-success" type="submit" value="Сохранить рецепт">
-          <input class="btn btn-secondary" id="btn2" type="reset" value="Отмена">
+          <input class="btn btn-success btnM" type="submit" value="Сохранить рецепт">
+          <input class="btn btn-secondary btnM" id="btn2" type="reset" value="Отмена">
         </form>
 
       </div>
