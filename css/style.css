@@ -6,6 +6,13 @@ body {
   margin-bottom: 10px;
   background: rgb(248, 255, 232);
 }
+@media (min-width:1421px){
+  .btn-lg{
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+  }
+}
 
 @media (max-width:1420px) {
   .btn-lg{
@@ -116,7 +123,6 @@ button .upd {
   text-align: center;
 }
 
-
 .mainT th,
 td {
   margin: 6px;
@@ -137,4 +143,8 @@ td {
 
 .dn{
   cursor:pointer;
+}
+
+.btnlog{
+  background-color: orange;
 }

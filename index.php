@@ -1,3 +1,10 @@
+<?
+session_start();
+if (isset($_SESSION['user'])) {
+  $user = $_SESSION['user'];
+ }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +39,19 @@
         </div>
         <div class="col text-center">
           <form method="POST"><button type="submit" name="show" value="other" class="btn btn-outline-success btn-lg">Другое</button></form>
+        </div>
+        <div class="col text-center">
+          <button <? if ($user) echo " disabled "; ?>id="login" class="btn btn-outline-success btn-lg btnlog"><? if (!$user) {
+                                                                                                            echo "Авторизация";
+                                                                                                          } else echo $user; ?></button>
+        </div>
+        <div id="log" class="col text-center" style="display:none">
+          <form action="login.php" method="POST">
+            <input type="text" class="form-control" name="userName" placeholder="login">
+            <input type="password" class="form-control" name="userPassword" placeholder="password">
+            <input type="submit" class="btn btn-success btn-sm" value="Войти">
+            <input id="otmena" type="button" class="btn btn-secondary btn-sm" value="Отмена">
+          </form>
         </div>
       </div>
     </div>
@@ -75,7 +95,7 @@
             <label for="del1" class="form-label">Введите Id рецепта</label>
             <input id="del1" type="number" class="form-control" name="recipeId">
           </div>
-          <input class="btn btn-danger btnM" type="submit" value="Удалить">
+          <input <? if(!$user){echo " disabled ";} ?> class="btn btn-danger btnM" type="submit" value="Удалить">
           <input class="btn btn-secondary btnM" type="reset" id="btn5" value="Отмена">
         </form>
       </div>
@@ -100,7 +120,7 @@
             <label for="ur" class="form-label">Ссылка на рецепт</label>
             <input id="ur" type="url" class="form-control" name="link">
           </div>
-          <input class="btn btn-success btnM" type="submit" value="Отредактировать">
+          <input <? if(!$user){echo " disabled ";} ?> class="btn btn-success btnM" type="submit" value="Отредактировать">
           <input class="btn btn-secondary btnM" type="reset" id="btn4" value="Отмена редактирования">
         </form>
 
@@ -129,7 +149,7 @@
             <label for="inp2" class="form-label">Ссылка на рецепт</label>
             <input id="inp2" class="form-control" type="url" size="48" name="link">
           </div>
-          <input class="btn btn-success btnM" type="submit" value="Сохранить рецепт">
+          <input <? if(!$user){echo " disabled ";} ?> class="btn btn-success btnM" type="submit" value="Сохранить рецепт">
           <input class="btn btn-secondary btnM" id="btn2" type="reset" value="Отмена">
         </form>
 

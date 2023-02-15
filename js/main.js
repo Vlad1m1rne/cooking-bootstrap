@@ -70,6 +70,14 @@ $('#btn5').click(function(){
   $('#btn3').show();
 });
 
+$('#login').click(function(){
+$("#log").slideDown(600);
+});
+
+$("#otmena").click(function(){
+$("#log").slideUp(600);
+});
+
 });
 
 
